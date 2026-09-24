@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ml-white: #ffffff;
+  --color-ml-surface: #f3f5f8;
+  --color-ml-ink: #101418;
+  --color-ml-grey: #667085;
+  --color-ml-blue: #1a5fd6;
+  --color-ml-blue-dark: #123f94;
+
+  --font-sans: var(--font-inter);
+}
