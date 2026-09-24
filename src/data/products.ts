@@ -35,7 +35,7 @@ export const products: Product[] = [
     sizes: ["1.5L"],
     colors: ["Plateado", "Negro"],
     images: [
-      "https://images.unsplash.com/photo-1585237017125-24baf8d7406f?w=800&q=80",
+      "https://images.unsplash.com/photo-1780511879762-156c25c75ac2?w=800&q=80",
     ],
     description: "Tritura, pica y mezcla en segundos. Ideal para uso en cocina o negocio.",
   },
@@ -49,7 +49,7 @@ export const products: Product[] = [
     sizes: ["1.25L"],
     colors: ["Negro", "Blanco"],
     images: [
-      "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=800&q=80",
+      "https://images.unsplash.com/photo-1585237672814-8f85a8118bf6?w=800&q=80",
     ],
     description: "Motor potente de alto torque, vaso de vidrio resistente, 3 velocidades.",
   },
@@ -63,7 +63,7 @@ export const products: Product[] = [
     sizes: ["4L"],
     colors: ["Negro"],
     images: [
-      "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=800&q=80",
+      "https://images.unsplash.com/photo-1695089028114-ce28248f0ab9?w=800&q=80",
     ],
     description: "Cocina con poco o nada de aceite, panel digital, temporizador integrado.",
   },
@@ -77,7 +77,7 @@ export const products: Product[] = [
     sizes: ["12 tazas"],
     colors: ["Negro"],
     images: [
-      "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80",
+      "https://images.unsplash.com/photo-1674504866626-fe4f19f68564?w=800&q=80",
     ],
     description: "Jarra de vidrio, filtro permanente, placa de calentamiento antigoteo.",
   },
@@ -91,7 +91,7 @@ export const products: Product[] = [
     sizes: ["5L"],
     colors: ["Rojo", "Blanco"],
     images: [
-      "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=800&q=80",
+      "https://images.unsplash.com/photo-1592542394539-0ce14590941d?w=800&q=80",
     ],
     description: "Bowl de acero inoxidable, varios accesorios, ideal para repostería.",
   },
@@ -105,7 +105,7 @@ export const products: Product[] = [
     sizes: ["Único"],
     colors: ["Negro", "Plateado"],
     images: [
-      "https://images.unsplash.com/photo-1585515320310-259814833e62?w=800&q=80",
+      "https://images.unsplash.com/photo-1618506408870-64d8bec48248?w=800&q=80",
     ],
     description: "Control de dorado ajustable, bandeja recogemigas extraíble.",
   },
@@ -147,7 +147,7 @@ export const products: Product[] = [
     sizes: ["Único"],
     colors: ["Blanco"],
     images: [
-      "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?w=800&q=80",
+      "https://images.unsplash.com/photo-1780590107737-9381035b8265?w=800&q=80",
     ],
     description: "Compatible con botellón, mini refrigerador incluido, bajo consumo.",
   },
@@ -189,7 +189,7 @@ export const products: Product[] = [
     sizes: ["Único"],
     colors: ["Negro", "Rosado"],
     images: [
-      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
+      "https://images.unsplash.com/photo-1522336284037-91f7da073525?w=800&q=80",
     ],
     description: "1800W, dos velocidades, boquilla concentradora incluida.",
   },
@@ -203,7 +203,7 @@ export const products: Product[] = [
     sizes: ["Único"],
     colors: ["Negro"],
     images: [
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80",
+      "https://images.unsplash.com/photo-1527799887038-b2addf7f1913?w=800&q=80",
     ],
     description: "Placas cerámicas, calentamiento rápido, control de temperatura.",
   },
@@ -217,7 +217,7 @@ export const products: Product[] = [
     sizes: ["Único"],
     colors: ["Negro", "Plateado"],
     images: [
-      "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80",
+      "https://images.unsplash.com/photo-1647900893846-e6ab4048e824?w=800&q=80",
     ],
     description: "Cuchillas de acero inoxidable, uso en seco o húmedo, recargable.",
   },
@@ -231,7 +231,7 @@ export const products: Product[] = [
     sizes: ["Único"],
     colors: ["Negro", "Blanco"],
     images: [
-      "https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&q=80",
+      "https://images.unsplash.com/photo-1646829873498-e874cfa27933?w=800&q=80",
     ],
     description: "Pantalla LCD, superficie de vidrio templado, alta precisión.",
   },
@@ -245,14 +245,14 @@ export const products: Product[] = [
     sizes: ["Único"],
     colors: ["Negro", "Blanco"],
     images: [
-      "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80",
+      "https://images.unsplash.com/photo-1564510182791-29645da7fac4?w=800&q=80",
     ],
     description: "Oscilación automática, control remoto, varias velocidades.",
   },
   {
     id: "p17",
-    slug: "aire-portatil-midea",
-    name: "Aire Acondicionado Portátil",
+    slug: "aire-split-midea",
+    name: "Aire Acondicionado Split",
     category: "climatizacion",
     brand: "Midea",
     price: 380,
@@ -261,7 +261,7 @@ export const products: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1718203862467-c33159fdc504?w=800&q=80",
     ],
-    description: "No requiere instalación fija, fácil de mover entre ambientes.",
+    description: "Unidad evaporadora y condensadora, alta eficiencia energética.",
   },
   {
     id: "p18",
@@ -273,7 +273,7 @@ export const products: Product[] = [
     sizes: ["16 pulgadas"],
     colors: ["Negro"],
     images: [
-      "https://images.unsplash.com/photo-1615870123253-f3de8aa89e24?w=800&q=80",
+      "https://images.unsplash.com/photo-1565151443833-29bf2ba5dd8d?w=800&q=80",
     ],
     description: "Altura ajustable, base estable, motor silencioso.",
   },
@@ -287,7 +287,7 @@ export const products: Product[] = [
     sizes: ["Único"],
     colors: ["Negro"],
     images: [
-      "https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?w=800&q=80",
+      "https://images.unsplash.com/photo-1547186577-a3f4fa07c2ef?w=800&q=80",
     ],
     description: "Calentamiento rápido, termostato ajustable, protección de sobrecalentamiento.",
   },
@@ -301,7 +301,7 @@ export const products: Product[] = [
     sizes: ["8 pulgadas"],
     colors: ["Blanco"],
     images: [
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80",
+      "https://images.unsplash.com/photo-1572081790780-1a7739896259?w=800&q=80",
     ],
     description: "Ideal para cocinas y baños, instalación sencilla, bajo consumo.",
   },
