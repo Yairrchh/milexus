@@ -5,7 +5,13 @@ import Link from "next/link";
 import type { Product } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({
+  product,
+  priority = false,
+}: {
+  product: Product;
+  priority?: boolean;
+}) {
   const { addItem } = useCart();
 
   const handleQuickAdd = (e: React.MouseEvent) => {
@@ -29,6 +35,7 @@ export default function ProductCard({ product }: { product: Product }) {
           fill
           className="object-cover transition duration-300 group-hover:scale-105"
           sizes="(max-width: 640px) 50vw, 25vw"
+          priority={priority}
         />
         <span className="absolute left-2 top-2 rounded bg-white/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-ml-grey shadow-sm">
           {product.brand}
