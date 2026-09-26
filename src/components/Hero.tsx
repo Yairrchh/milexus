@@ -87,14 +87,23 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative aspect-square flex-1 overflow-hidden sm:aspect-auto sm:min-h-[480px]">
+        <div className="relative aspect-[830/620] flex-1 overflow-hidden sm:aspect-auto sm:min-h-[480px]">
           <div ref={parallaxRef} className="absolute inset-0 origin-bottom will-change-transform">
+            <Image
+              src="/hero/productos-mayor-mobile.png"
+              alt="Televisor, nevera y aire split MILEXUS"
+              fill
+              className="block animate-[hero-image-in_900ms_cubic-bezier(0.16,1,0.3,1)_both] object-cover motion-reduce:animate-none sm:hidden"
+              sizes="100vw"
+              quality={90}
+              priority
+            />
             <Image
               src="/hero/productos-mayor.png"
               alt="Televisor, nevera y aire split MILEXUS, con clienta usando la batidora de mano MILEXUS"
               fill
-              className="animate-[hero-image-in_900ms_cubic-bezier(0.16,1,0.3,1)_both] object-cover object-left-bottom motion-reduce:animate-none sm:object-bottom"
-              sizes="(max-width: 639px) 100vw, (max-width: 1023px) calc(100vw - 380px), calc(100vw - 460px)"
+              className="hidden animate-[hero-image-in_900ms_cubic-bezier(0.16,1,0.3,1)_both] object-cover object-bottom motion-reduce:animate-none sm:block"
+              sizes="(max-width: 1023px) calc(100vw - 380px), calc(100vw - 460px)"
               quality={90}
               priority
             />
