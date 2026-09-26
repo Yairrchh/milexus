@@ -87,7 +87,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative min-h-[420px] flex-1 overflow-hidden sm:min-h-[480px]">
+        <div className="relative aspect-square flex-1 overflow-hidden sm:aspect-auto sm:min-h-[480px]">
           <div ref={parallaxRef} className="absolute inset-0 origin-bottom will-change-transform">
             <Image
               src="/hero/productos-mayor.png"
