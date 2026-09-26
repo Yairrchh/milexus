@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import { CartProvider } from "@/context/CartContext";
 import Header from "@/components/Header";
 import CartDrawer from "@/components/CartDrawer";
+import CartToast from "@/components/CartToast";
 import Footer from "@/components/Footer";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,6 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "MILEXUS — Electrodomésticos al Mayor",
   description: "Distribuidor mayorista de electrodomésticos en Venezuela.",
 };
@@ -31,6 +35,8 @@ export default function RootLayout({
           {children}
           <Footer />
           <CartDrawer />
+          <CartToast />
+          <WhatsAppWidget />
         </CartProvider>
       </body>
     </html>

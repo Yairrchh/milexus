@@ -4,7 +4,7 @@ import FilterBar from "@/components/FilterBar";
 
 export const metadata: Metadata = {
   title: "Catálogo — MILEXUS",
-  description: "Electrodomésticos al mayor: cocina, línea blanca, cuidado personal y climatización.",
+  description: "Electrodomésticos al mayor: cocina, línea blanca, climatización y electrónica.",
 };
 
 export default function CatalogoPage() {

@@ -3,12 +3,17 @@
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import type { Product } from "@/data/products";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function AddToCartForm({ product }: { product: Product }) {
   const { addItem } = useCart();
   const [size, setSize] = useState(product.sizes[0]);
   const [color, setColor] = useState(product.colors[0]);
   const [qty, setQty] = useState(1);
+
+  const quoteUrl = buildWhatsAppUrl(
+    `Hola, quiero cotizar el ${product.name} (${size}, ${color}) x${qty} de MILEXUS.`
+  );
 
   return (
     <div className="flex flex-col gap-4">
@@ -66,13 +71,24 @@ export default function AddToCartForm({ product }: { product: Product }) {
         </button>
       </div>
 
-      <button
-        type="button"
-        onClick={() => addItem(product, size, color, qty)}
-        className="rounded-full bg-ml-blue py-3 font-semibold uppercase tracking-wide text-white hover:bg-ml-blue-dark"
-      >
-        Agregar al carrito
-      </button>
+      {product.price !== null ? (
+        <button
+          type="button"
+          onClick={() => addItem(product, size, color, qty)}
+          className="rounded-full bg-ml-blue py-3 font-semibold uppercase tracking-wide text-white hover:bg-ml-blue-dark"
+        >
+          Agregar al carrito
+        </button>
+      ) : (
+        <a
+          href={quoteUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-[#25D366] py-3 text-center font-semibold uppercase tracking-wide text-white hover:opacity-90"
+        >
+          Cotizar por WhatsApp
+        </a>
+      )}
     </div>
   );
 }

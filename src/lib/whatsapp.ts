@@ -13,7 +13,7 @@ export function buildOrderMessage(
 
   const items = lines
     .map((l) => {
-      const lineTotal = (l.product.price * l.qty).toFixed(2);
+      const lineTotal = ((l.product.price ?? 0) * l.qty).toFixed(2);
       return `• ${l.product.name} (${l.color}, ${l.size}) x${l.qty} — $${lineTotal}`;
     })
     .join("\n");

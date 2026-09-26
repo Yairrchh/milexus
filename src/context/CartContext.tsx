@@ -5,9 +5,12 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import type { Product } from "@/data/products";
+
+const TOAST_DURATION_MS = 2500;
 
 export type CartLine = {
   lineId: string;
@@ -28,6 +31,7 @@ type CartContextValue = {
   isOpen: boolean;
   open: () => void;
   close: () => void;
+  toast: string | null;
 };
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -56,6 +60,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [lines, setLines] = useState<CartLine[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+  const toastTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    };
+  }, []);
 
   useEffect(() => {
     // Intentional: localStorage only exists client-side, so the cart must
@@ -82,7 +94,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       }
       return [...prev, { lineId, product, size, color, qty }];
     });
-    setIsOpen(true);
+
+    setToast(`${product.name} agregado al carrito`);
+    if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    toastTimeout.current = setTimeout(() => setToast(null), TOAST_DURATION_MS);
   };
 
   const removeItem = (lineId: string) => {
@@ -104,7 +119,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   };
 
   const subtotal = useMemo(
-    () => lines.reduce((sum, l) => sum + l.product.price * l.qty, 0),
+    () => lines.reduce((sum, l) => sum + (l.product.price ?? 0) * l.qty, 0),
     [lines]
   );
   const itemCount = useMemo(
@@ -125,6 +140,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         isOpen,
         open: () => setIsOpen(true),
         close: () => setIsOpen(false),
+        toast,
       }}
     >
       {children}

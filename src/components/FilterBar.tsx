@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import ProductCard from "./ProductCard";
+import Reveal from "./Reveal";
 import Select from "./Select";
 import { products, categoryLabels, type Category } from "@/data/products";
 
@@ -12,13 +13,28 @@ export default function FilterBar() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const rawCategory = searchParams.get("categoria") as Category | null;
+  const search = searchParams.get("buscar") ?? "";
+
+  const buildUrl = (updates: Record<string, string | null>) => {
+    const params = new URLSearchParams(searchParams.toString());
+    for (const [key, value] of Object.entries(updates)) {
+      if (value === null || value === "") {
+        params.delete(key);
+      } else {
+        params.set(key, value);
+      }
+    }
+    const qs = params.toString();
+    return qs ? `/catalogo?${qs}` : "/catalogo";
+  };
 
   const category: Category | "todas" =
     rawCategory && allCategories.includes(rawCategory) ? rawCategory : "todas";
   const setCategory = (v: Category | "todas") => {
-    router.replace(v === "todas" ? "/catalogo" : `/catalogo?categoria=${v}`, {
-      scroll: false,
-    });
+    router.replace(buildUrl({ categoria: v === "todas" ? null : v }), { scroll: false });
+  };
+  const setSearch = (v: string) => {
+    router.replace(buildUrl({ buscar: v }), { scroll: false });
   };
 
   const [brand, setBrand] = useState<string>("todas");
@@ -43,11 +59,20 @@ export default function FilterBar() {
     if (brand !== "todas" && p.brand !== brand) return false;
     if (size !== "todas" && !p.sizes.includes(size)) return false;
     if (color !== "todos" && !p.colors.includes(color)) return false;
+    if (search.trim() && !p.name.toLowerCase().includes(search.trim().toLowerCase()))
+      return false;
     return true;
   });
 
+  const hasActiveFilters =
+    category !== "todas" ||
+    brand !== "todas" ||
+    size !== "todas" ||
+    color !== "todos" ||
+    search.trim() !== "";
+
   const clearFilters = () => {
-    setCategory("todas");
+    router.replace("/catalogo", { scroll: false });
     setBrand("todas");
     setSize("todas");
     setColor("todos");
@@ -55,11 +80,19 @@ export default function FilterBar() {
 
   return (
     <div>
-      <div className="mb-8 flex flex-wrap gap-3">
+      <input
+        type="search"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Buscar por nombre..."
+        className="mb-4 w-full rounded border border-ml-grey/30 bg-ml-white px-3 py-2 text-sm outline-none focus:border-ml-blue sm:max-w-sm"
+      />
+
+      <div className="mb-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
         <Select
           value={category}
           onChange={(v) => setCategory(v as Category | "todas")}
-          className="w-44"
+          className="w-full sm:w-44"
           options={[
             { value: "todas", label: "Todas las categorías" },
             ...allCategories.map((c) => ({ value: c, label: categoryLabels[c] })),
@@ -69,7 +102,7 @@ export default function FilterBar() {
         <Select
           value={brand}
           onChange={setBrand}
-          className="w-40"
+          className="w-full sm:w-40"
           options={[
             { value: "todas", label: "Todas las marcas" },
             ...brands.map((b) => ({ value: b, label: b })),
@@ -79,7 +112,7 @@ export default function FilterBar() {
         <Select
           value={size}
           onChange={setSize}
-          className="w-36"
+          className="w-full sm:w-36"
           options={[
             { value: "todas", label: "Todas las capacidades" },
             ...sizes.map((s) => ({ value: s, label: s })),
@@ -89,18 +122,18 @@ export default function FilterBar() {
         <Select
           value={color}
           onChange={setColor}
-          className="w-36"
+          className="w-full sm:w-36"
           options={[
             { value: "todos", label: "Todos los colores" },
             ...colors.map((c) => ({ value: c, label: c })),
           ]}
         />
 
-        {(category !== "todas" || brand !== "todas" || size !== "todas" || color !== "todos") && (
+        {hasActiveFilters && (
           <button
             type="button"
             onClick={clearFilters}
-            className="text-sm font-semibold uppercase tracking-wide text-ml-blue"
+            className="col-span-2 text-sm font-semibold uppercase tracking-wide text-ml-blue sm:col-span-1"
           >
             Limpiar filtros
           </button>
@@ -117,7 +150,9 @@ export default function FilterBar() {
       ) : (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {filtered.map((p, i) => (
-            <ProductCard key={p.id} product={p} priority={i === 0} />
+            <Reveal key={p.id} delay={(i % 4) * 80} className="h-full">
+              <ProductCard product={p} priority={i === 0} />
+            </Reveal>
           ))}
         </div>
       )}

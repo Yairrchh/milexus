@@ -6,8 +6,9 @@ import { SELLER_WHATSAPP_NUMBER } from "@/lib/whatsapp";
 const footerCategories: Category[] = [
   "cocina",
   "linea-blanca",
-  "cuidado-personal",
   "climatizacion",
+  "televisores",
+  "electronica",
 ];
 
 const INSTAGRAM_HANDLE = "milexusvenezuela";
@@ -41,6 +42,30 @@ function InstagramIcon() {
   );
 }
 
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+      <path d="M13.5 21v-7.9h2.65l.4-3.08h-3.05V8.05c0-.89.25-1.5 1.52-1.5h1.63V3.8A21.9 21.9 0 0 0 14.3 3.7c-2.35 0-3.96 1.44-3.96 4.07v2.27H7.68v3.08h2.66V21h3.16Z" />
+    </svg>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden="true">
+      <path d="M18.24 3H21l-6.4 7.3L22.14 21H16.2l-4.65-6.1L6.2 21H3.4l6.85-7.83L2.86 3h6.1l4.2 5.57L18.24 3Zm-1.05 16.17h1.5L7.88 4.75H6.28l10.91 14.42Z" />
+    </svg>
+  );
+}
+
+function YouTubeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+      <path d="M21.6 7.2s-.2-1.5-.84-2.15c-.8-.86-1.7-.86-2.12-.91C15.7 4 12 4 12 4h-.01s-3.7 0-6.64.14c-.42.05-1.31.05-2.12.91C2.6 5.7 2.4 7.2 2.4 7.2S2.2 9 2.2 10.7v1.6c0 1.7.2 3.5.2 3.5s.2 1.5.83 2.15c.81.86 1.87.83 2.35.92 1.7.17 7.42.22 7.42.22s3.71-.01 6.65-.15c.42-.06 1.31-.06 2.12-.92.64-.65.84-2.15.84-2.15s.2-1.8.2-3.5v-1.6c0-1.7-.2-3.5-.2-3.5ZM9.95 14.5v-5.6l5.4 2.81-5.4 2.8Z" />
+    </svg>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="border-t border-ml-grey/10 bg-ml-surface px-4 py-12">
@@ -51,7 +76,7 @@ export default function Footer() {
           </div>
           <p className="max-w-xs text-sm text-ml-grey">
             Distribuidor mayorista de electrodomésticos. Cocina, línea
-            blanca, cuidado personal y climatización.
+            blanca, climatización y electrónica.
           </p>
         </div>
 
@@ -104,6 +129,55 @@ export default function Footer() {
 
       <div className="mx-auto mt-10 max-w-6xl border-t border-ml-grey/10 pt-6 text-xs text-ml-grey">
         © {new Date().getFullYear()} MILEXUS. Todos los derechos reservados.
+      </div>
+
+      <div className="mx-auto mt-6 flex max-w-6xl flex-col gap-4 border-t border-ml-grey/10 pt-4 text-xs text-ml-grey sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <span className="font-bold text-ml-ink">Venezuela/Español</span>
+          <span className="text-ml-grey/40">|</span>
+          <a
+            href={`https://wa.me/${SELLER_WHATSAPP_NUMBER}?text=${contactMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-ml-blue"
+          >
+            Contáctanos
+          </a>
+          <span>Accesibilidad</span>
+          <span>Legal</span>
+          <span>Privacidad</span>
+          <span>Mapa del sitio</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span>¡Mantente informado!</span>
+          <div className="flex items-center gap-2 text-ml-ink">
+            <span
+              aria-label="Facebook (próximamente)"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-ml-grey/20"
+            >
+              <FacebookIcon />
+            </span>
+            <span
+              aria-label="X (próximamente)"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-ml-grey/20"
+            >
+              <XIcon />
+            </span>
+            <span
+              aria-label="Instagram (próximamente)"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-ml-grey/20"
+            >
+              <InstagramIcon />
+            </span>
+            <span
+              aria-label="YouTube (próximamente)"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-ml-grey/20"
+            >
+              <YouTubeIcon />
+            </span>
+          </div>
+        </div>
       </div>
     </footer>
   );

@@ -18,7 +18,8 @@ export async function generateMetadata({
   const product = products.find((p) => p.slug === slug);
   if (!product) return { title: "Producto no encontrado — MILEXUS" };
 
-  const title = `${product.name} — $${product.price} | MILEXUS`;
+  const priceLabel = product.price !== null ? `$${product.price}` : "Consultar precio";
+  const title = `${product.name} — ${priceLabel} | MILEXUS`;
   const description = `${product.description} ${product.brand} · Disponible al mayor.`;
 
   return {
@@ -46,7 +47,7 @@ export default async function ProductPage({
             src={product.images[0]}
             alt={product.name}
             fill
-            className="object-cover"
+            className="object-contain p-8"
             sizes="(max-width: 640px) 100vw, 50vw"
             priority
           />
@@ -55,7 +56,11 @@ export default async function ProductPage({
         <div className="flex flex-col gap-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-ml-grey">{product.brand}</p>
           <h1 className="text-3xl font-bold uppercase">{product.name}</h1>
-          <p className="text-2xl font-bold text-ml-blue">${product.price}</p>
+          {product.price !== null ? (
+            <p className="text-2xl font-bold text-ml-blue">${product.price}</p>
+          ) : (
+            <p className="text-lg font-semibold text-ml-grey">Consultar precio</p>
+          )}
           <p className="text-ml-grey">{product.description}</p>
           <AddToCartForm product={product} />
         </div>
