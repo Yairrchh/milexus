@@ -48,15 +48,15 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-gradient-to-r from-ml-surface via-ml-surface to-white">
       <div className="mx-auto flex max-w-[1600px] flex-col sm:flex-row sm:items-stretch">
         <div className="flex w-full flex-col justify-center gap-6 px-4 py-16 sm:w-[380px] sm:shrink-0 sm:px-10 lg:w-[460px] lg:py-24">
-          <h1 className="animate-[page-fade-in_600ms_cubic-bezier(0.16,1,0.3,1)_both] text-4xl font-extrabold leading-[1.05] text-ml-ink motion-reduce:animate-none sm:text-5xl lg:text-6xl">
+          <h1 className="animate-[hero-slide-in-left_900ms_cubic-bezier(0.22,0.61,0.36,1)_both] text-4xl font-extrabold leading-[1.05] text-ml-ink motion-reduce:animate-none sm:text-5xl lg:text-6xl">
             Todo para tu negocio
           </h1>
-          <p className="max-w-sm animate-[page-fade-in_600ms_cubic-bezier(0.16,1,0.3,1)_100ms_both] text-ml-grey motion-reduce:animate-none">
+          <p className="max-w-sm animate-[hero-slide-in-left_900ms_cubic-bezier(0.22,0.61,0.36,1)_140ms_both] text-ml-grey motion-reduce:animate-none">
             Precios al mayor, atención directa y entrega inmediata para tu
             tienda o negocio. Cocina, línea blanca, climatización y
             electrónica.
           </p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 animate-[page-fade-in_600ms_cubic-bezier(0.16,1,0.3,1)_200ms_both] motion-reduce:animate-none">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 animate-[hero-slide-in-left_900ms_cubic-bezier(0.22,0.61,0.36,1)_280ms_both] motion-reduce:animate-none">
             <Link
               href="/catalogo"
               className="font-semibold text-ml-ink underline underline-offset-4 hover:text-ml-blue"
@@ -93,7 +93,7 @@ export default function Hero() {
               src="/hero/productos-mayor.png"
               alt="Televisor, nevera y aire split MILEXUS, con clienta usando la batidora de mano MILEXUS"
               fill
-              className="object-cover object-left-bottom sm:object-bottom"
+              className="animate-[hero-image-in_900ms_cubic-bezier(0.16,1,0.3,1)_both] object-cover object-left-bottom motion-reduce:animate-none sm:object-bottom"
               sizes="(max-width: 639px) 100vw, (max-width: 1023px) calc(100vw - 380px), calc(100vw - 460px)"
               quality={90}
               priority
