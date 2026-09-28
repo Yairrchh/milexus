@@ -8,8 +8,8 @@ export function buildOrderMessage(
   customerName?: string
 ): string {
   const header = customerName
-    ? `Hola, soy ${customerName}. Quiero hacer este pedido al mayor en MILEXUS:`
-    : "Hola, quiero hacer este pedido al mayor en MILEXUS:";
+    ? `Hola, soy ${customerName}. Quiero hacer este pedido al mayor en ELECTRONOVA:`
+    : "Hola, quiero hacer este pedido al mayor en ELECTRONOVA:";
 
   const items = lines
     .map((l) => {

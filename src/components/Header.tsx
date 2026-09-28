@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Logo from "./Logo";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { categoryLabels } from "@/data/products";
@@ -72,14 +72,7 @@ export default function Header() {
         </button>
 
         <Link href="/" className="shrink-0">
-          <Image
-            src="/logo-blue.svg"
-            alt="MILEXUS"
-            width={184}
-            height={32}
-            priority
-            className={`w-auto transition-[height] duration-300 ${scrolled ? "h-5" : "h-6"}`}
-          />
+          <Logo className={`transition-[font-size] duration-300 ${scrolled ? "text-lg" : "text-xl"}`} />
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-ml-ink sm:flex">

@@ -12,7 +12,7 @@ export default function AddToCartForm({ product }: { product: Product }) {
   const [qty, setQty] = useState(1);
 
   const quoteUrl = buildWhatsAppUrl(
-    `Hola, quiero cotizar el ${product.name} (${size}, ${color}) x${qty} de MILEXUS.`
+    `Hola, quiero cotizar el ${product.name} (${size}, ${color}) x${qty} de ELECTRONOVA.`
   );
 
   return (

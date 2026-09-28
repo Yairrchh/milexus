@@ -23,7 +23,7 @@ export default function ProductCard({
   };
 
   const quoteUrl = buildWhatsAppUrl(
-    `Hola, quiero cotizar el ${product.name} de MILEXUS.`
+    `Hola, quiero cotizar el ${product.name} de ELECTRONOVA.`
   );
 
   return (
@@ -39,7 +39,7 @@ export default function ProductCard({
           src={product.images[0]}
           alt={product.name}
           fill
-          className="object-contain p-4 transition duration-300 group-hover:scale-105"
+          className="object-cover transition duration-300 group-hover:scale-105"
           sizes="(max-width: 640px) 50vw, 25vw"
           priority={priority}
         />

@@ -2,13 +2,13 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import Reveal from "@/components/Reveal";
 
 const offersUrl = buildWhatsAppUrl(
-  "Hola, quiero recibir ofertas y novedades de MILEXUS por WhatsApp."
+  "Hola, quiero recibir ofertas y novedades de ELECTRONOVA por WhatsApp."
 );
 const salesUrl = buildWhatsAppUrl(
-  "Hola, quiero hablar con el equipo de ventas de MILEXUS."
+  "Hola, quiero hablar con el equipo de ventas de ELECTRONOVA."
 );
 const supportUrl = buildWhatsAppUrl(
-  "Hola, necesito soporte técnico con un producto MILEXUS."
+  "Hola, necesito soporte técnico con un producto ELECTRONOVA."
 );
 
 function EditIcon() {

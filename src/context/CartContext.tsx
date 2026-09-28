@@ -35,7 +35,7 @@ type CartContextValue = {
 };
 
 const CartContext = createContext<CartContextValue | null>(null);
-const STORAGE_KEY = "milexus-cart";
+const STORAGE_KEY = "electronova-cart";
 
 function readStoredLines(): CartLine[] {
   try {

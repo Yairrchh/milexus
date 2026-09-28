@@ -18,8 +18,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "MILEXUS — Electrodomésticos al Mayor",
-  description: "Distribuidor mayorista de electrodomésticos en Venezuela.",
+  title: "ELECTRONOVA — Electrodomésticos al Mayor",
+  description: "Distribuidor mayorista de electrodomésticos.",
 };
 
 export default function RootLayout({

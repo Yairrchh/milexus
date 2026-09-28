@@ -44,7 +44,7 @@ export default function CartDrawer() {
               {lines.map((l) => (
                 <li key={l.lineId} className="flex gap-3 border-b border-ml-grey/20 pb-4">
                   <div className="relative h-20 w-16 shrink-0 overflow-hidden rounded bg-ml-surface">
-                    <Image src={l.product.images[0]} alt={l.product.name} fill className="object-contain p-1" sizes="64px" />
+                    <Image src={l.product.images[0]} alt={l.product.name} fill className="object-cover" sizes="64px" />
                   </div>
                   <div className="flex flex-1 flex-col gap-1">
                     <p className="font-semibold">{l.product.name}</p>

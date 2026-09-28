@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const promoWhatsAppUrl = buildWhatsAppUrl(
-  "Hola, quiero información sobre precios al mayor en MILEXUS."
+  "Hola, quiero información sobre precios al mayor en ELECTRONOVA."
 );
 
 function WhatsAppIcon() {

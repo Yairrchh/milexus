@@ -16,10 +16,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const product = products.find((p) => p.slug === slug);
-  if (!product) return { title: "Producto no encontrado — MILEXUS" };
+  if (!product) return { title: "Producto no encontrado — ELECTRONOVA" };
 
   const priceLabel = product.price !== null ? `$${product.price}` : "Consultar precio";
-  const title = `${product.name} — ${priceLabel} | MILEXUS`;
+  const title = `${product.name} — ${priceLabel} | ELECTRONOVA`;
   const description = `${product.description} ${product.brand} · Disponible al mayor.`;
 
   return {
@@ -47,7 +47,7 @@ export default async function ProductPage({
             src={product.images[0]}
             alt={product.name}
             fill
-            className="object-contain p-8"
+            className="object-cover"
             sizes="(max-width: 640px) 100vw, 50vw"
             priority
           />

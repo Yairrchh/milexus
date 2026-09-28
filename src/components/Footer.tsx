@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Logo from "./Logo";
 import Link from "next/link";
 import { categoryLabels, type Category } from "@/data/products";
 import { SELLER_WHATSAPP_NUMBER } from "@/lib/whatsapp";
@@ -11,10 +11,8 @@ const footerCategories: Category[] = [
   "electronica",
 ];
 
-const INSTAGRAM_HANDLE = "milexusvenezuela";
-
 const contactMessage = encodeURIComponent(
-  "Hola, quiero más información sobre MILEXUS."
+  "Hola, quiero más información sobre ELECTRONOVA."
 );
 
 function WhatsAppIcon() {
@@ -71,9 +69,7 @@ export default function Footer() {
     <footer className="border-t border-ml-grey/10 bg-ml-surface px-4 py-12">
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-3">
         <div className="flex flex-col gap-3">
-          <div className="w-fit rounded bg-ml-blue px-3 py-2">
-            <Image src="/logo.svg" alt="MILEXUS" width={138} height={24} className="h-6 w-auto" />
-          </div>
+          <Logo className="text-2xl" />
           <p className="max-w-xs text-sm text-ml-grey">
             Distribuidor mayorista de electrodomésticos. Cocina, línea
             blanca, climatización y electrónica.
@@ -110,30 +106,17 @@ export default function Footer() {
             >
               <WhatsAppIcon />
             </a>
-            <a
-              href={`https://instagram.com/${INSTAGRAM_HANDLE}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Seguinos en Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-white transition hover:opacity-85"
-              style={{
-                background:
-                  "linear-gradient(45deg, #FEDA75, #FA7E1E, #D62976, #962FBF, #4F5BD5)",
-              }}
-            >
-              <InstagramIcon />
-            </a>
           </div>
         </div>
       </div>
 
       <div className="mx-auto mt-10 max-w-6xl border-t border-ml-grey/10 pt-6 text-xs text-ml-grey">
-        © {new Date().getFullYear()} MILEXUS. Todos los derechos reservados.
+        © {new Date().getFullYear()} ELECTRONOVA. Todos los derechos reservados.
       </div>
 
       <div className="mx-auto mt-6 flex max-w-6xl flex-col gap-4 border-t border-ml-grey/10 pt-4 text-xs text-ml-grey sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-          <span className="font-bold text-ml-ink">Venezuela/Español</span>
+          <span className="font-bold text-ml-ink">Español</span>
           <span className="text-ml-grey/40">|</span>
           <a
             href={`https://wa.me/${SELLER_WHATSAPP_NUMBER}?text=${contactMessage}`}

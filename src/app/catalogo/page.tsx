@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import FilterBar from "@/components/FilterBar";
 
 export const metadata: Metadata = {
-  title: "Catálogo — MILEXUS",
+  title: "Catálogo — ELECTRONOVA",
   description: "Electrodomésticos al mayor: cocina, línea blanca, climatización y electrónica.",
 };
 
