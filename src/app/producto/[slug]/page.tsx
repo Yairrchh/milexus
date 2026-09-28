@@ -41,7 +41,7 @@ export default async function ProductPage({
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
       <div className="grid gap-8 sm:grid-cols-2">
-        <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-ml-surface">
+        <div className="relative aspect-square overflow-hidden rounded-lg bg-ml-surface">
           <BackButton />
           <Image
             src={product.images[0]}
